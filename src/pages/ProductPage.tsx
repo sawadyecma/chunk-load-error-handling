@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { products } from "../domain/product";
 import React from "react";
 
+console.log("ProductPage loaded!");
+
 export const ProductPage = () => {
   const { id } = useParams();
   const product = products.find((product) => product.id === Number(id));
@@ -14,3 +16,5 @@ export const ProductPage = () => {
     </div>
   );
 };
+
+export default ProductPage;
