@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { PATHS } from "./path";
 import { lazy } from "react";
 import { AppErrorBoundary } from "../basis/ErrorBoundary";
+import { ProfilePage } from "../pages/ProfilePage";
 
 const ProductsPage = lazy(() => import("../pages/ProductsPage"));
 const ProductPage = lazy(() => import("../pages/ProductPage"));
@@ -38,6 +39,14 @@ export const router = createBrowserRouter([
     element: (
       <AppErrorBoundary>
         <CartPage />
+      </AppErrorBoundary>
+    ),
+  },
+  {
+    path: PATHS.profile,
+    element: (
+      <AppErrorBoundary>
+        <ProfilePage />
       </AppErrorBoundary>
     ),
   },

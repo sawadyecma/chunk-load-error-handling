@@ -21,7 +21,8 @@ export const ProductsPage = () => {
           </li>
         ))}
       </ul>
-      <a href="/cart">カートへ</a>
+      <a href={PATHS.cart}>カートへ</a>
+      <a href={PATHS.profile}>プロフィールへ</a>
     </main>
   );
 };

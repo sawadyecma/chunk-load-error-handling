@@ -7,7 +7,12 @@ export const AppErrorBoundary = ({ children }: { children: ReactNode }) => (
     fallbackRender={({ error, resetErrorBoundary }) => {
       console.log({ error });
       if (error instanceof Error && error.name === "ChunkLoadError") {
-        return <h1>ChunkLoadError</h1>;
+        return (
+          <div>
+            <h1>ChunkLoadError</h1>
+            <button onClick={() => window.location.reload()}>refresh</button>
+          </div>
+        );
       }
 
       debugger;
@@ -15,6 +20,7 @@ export const AppErrorBoundary = ({ children }: { children: ReactNode }) => (
         <div>
           <h1>Something went wrong</h1>
           <pre>{error.message}</pre>
+          <button onClick={() => window.location.reload()}>refresh</button>
           <button onClick={resetErrorBoundary}>Try again</button>
         </div>
       );
