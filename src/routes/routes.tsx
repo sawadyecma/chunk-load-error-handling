@@ -3,8 +3,11 @@ import { createBrowserRouter, RouteObject } from "react-router-dom";
 import { PATHS } from "./path";
 import { lazy } from "react";
 import { AppErrorBoundary } from "../basis/ErrorBoundary";
-import { ProfilePage } from "../pages/ProfilePage";
-
+// import { ProfilePage } from "../pages/ProfilePage";
+// import { ProductPage } from "../pages/ProductPage";
+// import { ProductsPage } from "../pages/ProductsPage";
+// import { CartPage } from "../pages/CartPage";
+const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 const ProductsPage = lazy(() => import("../pages/ProductsPage"));
 const ProductPage = lazy(() => import("../pages/ProductPage"));
 const CartPage = lazy(() => import("../pages/CartPage"));
